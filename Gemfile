@@ -5,7 +5,16 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql'
+group :development do
+  gem 'sqlite3'
+  gem 'heroku'
+  gem 'log4r'
+  gem 'annotate'
+end
+
+group :production do
+  gem "pg"
+end
 
 gem 'json'
 
@@ -14,6 +23,8 @@ gem 'json'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem "haml"
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -23,6 +34,19 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem "rspec-rails"
+  gem "capybara"
+end
+
+gem "devise"
+gem "settingslogic"
+gem "chronic"
+gem "formtastic"
+gem "rb-readline"
+gem "maruku"
+gem "markdown-rails"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -31,6 +55,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem "haml"
 
 # Deploy with Capistrano
 # gem 'capistrano'

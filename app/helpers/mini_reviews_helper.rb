@@ -1,0 +1,2 @@
+module MiniReviewsHelper
+end
