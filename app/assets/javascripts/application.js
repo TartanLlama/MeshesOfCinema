@@ -12,6 +12,6 @@
 //
 //= require_self
 //= require application_vendor
-// require jquery
-// require jquery_ujs
+//= require jquery
+//= require jquery_ujs
 //= require_tree .

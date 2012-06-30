@@ -80,4 +80,16 @@ class FilmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    @search = Film.search do
+      fulltext params[:search]
+    end
+    @films = @search.results
+    
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @films }
+    end
+  end
 end

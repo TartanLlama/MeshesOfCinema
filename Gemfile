@@ -10,6 +10,7 @@ group :development do
   gem 'heroku'
   gem 'log4r'
   gem 'annotate'
+  gem 'sunspot_solr'
 end
 
 group :production do
@@ -24,7 +25,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem "haml"
-
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -46,6 +46,7 @@ gem "formtastic"
 gem "rb-readline"
 gem "maruku"
 gem "markdown-rails"
+gem "sunspot_rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -55,7 +56,7 @@ gem "markdown-rails"
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem "haml"
+gem "haml-rails"
 
 # Deploy with Capistrano
 # gem 'capistrano'

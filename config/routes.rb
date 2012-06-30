@@ -1,4 +1,8 @@
 MeshesOfCinema::Application.routes.draw do
+  devise_for :admins
+  
+  resources :films
+
   match "/reviews", to: 'reviews#index'
   match "/articles", to: 'articles#index'
   match "/admins", to: 'admins#index'
@@ -14,6 +18,9 @@ MeshesOfCinema::Application.routes.draw do
   match "/about", to: 'standard#about'
   match "/contact", to: 'standard#contact'
   root to: 'standard#index'
+
+  #SEARCHING
+  match "/search/films", to: 'films#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

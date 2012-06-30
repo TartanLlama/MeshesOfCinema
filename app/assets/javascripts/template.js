@@ -9,5 +9,3 @@ $(function() {
 	    $(this).val('Search...');
     });
 });
-
-

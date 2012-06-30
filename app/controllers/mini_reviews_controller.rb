@@ -1,4 +1,6 @@
 class MiniReviewsController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index, :show]
+
   # GET /mini_reviews
   # GET /mini_reviews.json
   def index

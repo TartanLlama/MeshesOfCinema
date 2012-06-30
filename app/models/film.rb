@@ -1,5 +1,5 @@
 class Film < ActiveRecord::Base
-  attr_accessible :name, :rating
+  attr_accessible :name, :rating, :year
   has_and_belongs_to_many :tags
   has_and_belongs_to_many :directors
   has_and_belongs_to_many :elements
@@ -9,4 +9,8 @@ class Film < ActiveRecord::Base
   has_and_belongs_to_many :themes
   has_and_belongs_to_many :mini_reviews
   has_and_belongs_to_many :reviews
+
+  searchable do
+    text :name
+  end
 end

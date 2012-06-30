@@ -6,29 +6,17 @@
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-
+    = render "layouts/shim"
+    
   %body
     #page
-      #head
-        #title_line
-          = link_to image_tag('logosmall.png', id: 'logo'), root_path
-          #right_logo
-            #details
-              %a#facebook.social_media_icon
-              %a#twitter.social_media_icon
-              %a#rss.social_media_icon
-
-            .search
-              %form.search_form
-                %input.search_field{type:'text', value:'Search...'}
-                %a.search_button
-
-        = render "shared/nav"
-
+      = render 'layouts/header'
       #content_border
         #content
+          %p.notice= notice
+          %p.alert= alert
           = yield
 
-    #copyright
-      &#169; Simon Brand 2012. All rights reserved.
+    = render 'layouts/footer'
+
 

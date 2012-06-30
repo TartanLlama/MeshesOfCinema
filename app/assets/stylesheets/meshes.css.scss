@@ -1,3 +1,6 @@
+textarea {
+  width: 100%
+}
 
 h2 {
     margin-top: 0px;
@@ -15,7 +18,7 @@ h2 {
     padding-bottom: 10px;
 }
 
-#nav {
+nav {
     display: inline-table;
     padding-top: 10px;
     clear: left;
@@ -203,10 +206,9 @@ html {
 }
 
 #copyright {
-    padding-top: 20px;
-    clear: left;
-    font-size: 75%;
-    text-align: center;
+  clear: left;
+  font-size: 75%;
+  text-align: center;
 }
 
 .story {
@@ -298,4 +300,14 @@ td ul {
 
 .centre {
     text-align: center;
+}
+
+#footer_links a{
+  font-style: normal !important;
+  font-weight: normal !important;
+}
+
+#footer {
+  text-align: center;
+  padding-top: 30px;
 }
