@@ -1,0 +1,21 @@
+
+
+= form_for(@mini_review) do |f|
+  - if @mini_review.errors.any?
+    #error_explanation
+      %h2= pluralize(@mini_review.errors.count, "error") %> prohibited this mini_review from being saved:
+
+      %ul
+        - @mini_review.errors.full_messages.each do |msg|
+          %li= msg
+        - end
+  - end
+
+  .field
+    = f.label :content
+    %br/
+    = f.text_area :content
+
+  .actions
+    = f.submit
+- end

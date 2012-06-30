@@ -1,0 +1,15 @@
+#head
+  #title_line
+    = link_to image_tag('logosmall.png', id: 'logo'), root_path
+    #right_logo
+      #details
+        %a#facebook.social_media_icon
+        %a#twitter.social_media_icon
+        %a#rss.social_media_icon
+
+      .search
+        %form.search_form
+        %input.search_field{type:'text', value:'Search...'}
+        %a.search_button
+
+    = render "layouts/nav"
