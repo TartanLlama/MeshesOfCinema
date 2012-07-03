@@ -1,0 +1,9 @@
+%h2= link_to mini_review.films.first.formatted_name, mini_review.films.first
+%h4
+  By:
+  = (mini_review.admins.map {|a| (link_to a.name, a).html_safe}).to_sentence
+%h4
+  Rating:
+  = to_rating_string mini_review.rating
+= mini_review.content.html_safe
+

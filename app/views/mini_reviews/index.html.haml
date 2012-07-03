@@ -1,15 +1,8 @@
-%h1 Listing mini_reviews
-%table
-  %tr
-    %th Title
-    %th Content
-    %th
-    %th
-    %th
-  - @mini_reviews.each do |mini_review|
-    %tr
-      %td= mini_review.content
-      %td= link_to 'Show', mini_review
-      %td= link_to 'Edit', edit_mini_review_path(mini_review)
-      %td= link_to 'Destroy', mini_review, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
+%h2 Mini-reviews
+
+Sort by:
+%ul
+  %li= link_to "Genres", '/genres'
+  %li= link_to "Themes", '/themes'
+  %li= link_to "Elements", '/elements'
+  %li= link_to "Movements", '/movements'

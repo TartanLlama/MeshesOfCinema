@@ -8,7 +8,7 @@
           %li= msg
 
   = f.inputs do
-    = f.input :films
+    = f.input :films, collection: Hash[Film.all.map {|f| ["#{f.formatted_name}(#{f.imdb_id})", f.id]}]
     or
     = link_to "new film", "/films/new"
     = f.input :rating
