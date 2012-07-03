@@ -1,4 +1,6 @@
 class FilmsController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index, :show]
+
   # GET /films
   # GET /films.json
   def index
@@ -13,7 +15,7 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
-    @film = Film.find(params[:id])
+    @film = Film.find_by_id(params[:id]) || Film.find_by_imdb_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +36,7 @@ class FilmsController < ApplicationController
 
   # GET /films/1/edit
   def edit
-    @film = Film.find(params[:id])
+    @film = Film.find_by_id(params[:id]) || Film.find_by_imdb_id(params[:id])
   end
 
   # POST /films
@@ -56,7 +58,7 @@ class FilmsController < ApplicationController
   # PUT /films/1
   # PUT /films/1.json
   def update
-    @film = Film.find(params[:id])
+    @film = Film.find_by_id(params[:id]) || Film.find_by_imdb_id(params[:id])
 
     respond_to do |format|
       if @film.update_attributes(params[:film])
@@ -72,7 +74,7 @@ class FilmsController < ApplicationController
   # DELETE /films/1
   # DELETE /films/1.json
   def destroy
-    @film = Film.find(params[:id])
+    @film = Film.find_by_id(params[:id]) || Film.find_by_imdb_id(params[:id])
     @film.destroy
 
     respond_to do |format|

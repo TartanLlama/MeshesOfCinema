@@ -3,7 +3,7 @@ class CreateAdmins < ActiveRecord::Migration
     create_table :admins do |t|
       t.string :name
       t.text :bio
-      t.integer :privilege
+      t.integer :power
 
       t.timestamps
     end

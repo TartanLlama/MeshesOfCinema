@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+Admin.new(name: "Simon Brand", email: 'tartanllama@hotmail.com', password: 'asdfasdf').save
+
+Carmen::Country.all.each do |c|
+  Country.new(country_id: c.code).save
+end

@@ -1,0 +1,19 @@
+%h1 Listing movements
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @movements.each do |movement|
+    %tr
+      %td= movement.name
+      %td= link_to 'Show', movement
+      %td= link_to 'Edit', edit_movement_path(movement)
+      %td= link_to 'Destroy', movement, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Movement', new_movement_path

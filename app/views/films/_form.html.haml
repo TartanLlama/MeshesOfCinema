@@ -1,0 +1,16 @@
+= semantic_form_for(@film) do |f|
+  - if @film.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@film.errors.count, "error")
+        prohibited this film from being saved:
+      %ul
+        - @film.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs do
+    = f.input :name
+    = f.input :year
+    = f.input :imdb_id
+    = f.input :directors
+  = f.actions

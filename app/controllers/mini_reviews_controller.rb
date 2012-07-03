@@ -26,6 +26,7 @@ class MiniReviewsController < ApplicationController
   # GET /mini_reviews/new
   # GET /mini_reviews/new.json
   def new
+    @film = Film.new
     @mini_review = MiniReview.new
 
     respond_to do |format|

@@ -1,0 +1,19 @@
+= semantic_form_for(@director) do |f|
+  - if @director.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@director.errors.count, "error")
+        prohibited this director from being saved:
+      %ul
+        - @director.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.inputs do
+    = f.input :name
+    = f.input :bio
+    = f.input :dob, start_year: 1800, end_year: Time.now.year
+    = f.input :dod, start_year: 1800, end_year: Time.now.year
+    = f.input :imdb_id
+    = f.input :tag_list
+    = f.input :countries, as: :country, priority_countries: priority_countries, input_html: {multiple: 'multiple', name: "director[country_ids][]"}
+  = f.actions

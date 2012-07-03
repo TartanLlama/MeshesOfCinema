@@ -1,0 +1,14 @@
+%h1 Listing mini_articles
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+  - @mini_articles.each do |mini_article|
+    %tr
+      %td= mini_article.name
+      %td= link_to 'Show', mini_article
+      %td= link_to 'Edit', edit_mini_article_path(mini_article)
+      %td= link_to 'Destroy', mini_article, method: :delete, data: { confirm: 'Are you sure?' }
+%br/

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @movement.name
+
+= link_to 'Edit', edit_movement_path(@movement)
+\|
+= link_to 'Back', movements_path

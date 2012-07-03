@@ -5,8 +5,11 @@ class CreateDirectors < ActiveRecord::Migration
       t.date :dob
       t.date :dod
       t.text :bio
+      t.string :imdb_id
 
       t.timestamps
     end
+
+    add_index :directors, :imdb_id, unique: true
   end
 end

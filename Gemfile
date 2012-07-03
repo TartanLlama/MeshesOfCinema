@@ -9,7 +9,7 @@ group :development do
   gem 'sqlite3'
   gem 'heroku'
   gem 'log4r'
-  gem 'annotate'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'sunspot_solr'
 end
 
@@ -42,11 +42,18 @@ end
 gem "devise"
 gem "settingslogic"
 gem "chronic"
-gem "formtastic"
+gem "formtastic", git: 'git://github.com/justinfrench/formtastic.git'
 gem "rb-readline"
 gem "maruku"
 gem "markdown-rails"
 gem "sunspot_rails"
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
+gem "acts-as-taggable-on"
+gem "carmen", git: 'git://github.com/jim/carmen.git'
+gem "carmen-rails", git: 'git://github.com/jim/carmen-rails.git'
+gem "haml-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -56,7 +63,6 @@ gem "sunspot_rails"
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem "haml-rails"
 
 # Deploy with Capistrano
 # gem 'capistrano'

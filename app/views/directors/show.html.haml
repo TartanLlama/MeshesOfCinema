@@ -1,0 +1,17 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @director.name
+%p
+  %b Dob:
+  = @director.dob
+%p
+  %b Dod:
+  = @director.dod
+%p
+  %b Bio:
+  = @director.bio
+
+= link_to 'Edit', edit_director_path(@director)
+|
+\#{link_to 'Back', directors_path}

@@ -1,0 +1,18 @@
+%h1 Listing admins
+%table
+  %tr
+    %th Name
+    %th Bio
+    %th Privilege
+    %th
+    %th
+    %th
+  - @admins.each do |admin|
+    %tr
+      %td= admin.name
+      %td= admin.bio
+      %td= admin.privilege
+      %td= link_to 'Show', admin
+      %td= link_to 'Edit', edit_admin_path(admin)
+      %td= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
