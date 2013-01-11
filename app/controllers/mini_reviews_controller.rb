@@ -43,7 +43,7 @@ class MiniReviewsController < ApplicationController
   # POST /mini_reviews
   # POST /mini_reviews.json
   def create
-    @mini_review = MiniReview.new(params[:mini_review])
+    @mini_review = MiniReview.new(params[:mini_review].merge(admins: [current_admin]))
 
     respond_to do |format|
       if @mini_review.save

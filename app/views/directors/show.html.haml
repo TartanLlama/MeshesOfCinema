@@ -1,17 +1,15 @@
 %p#notice= notice
-%p
-  %b Name:
+%h2
   = @director.name
 %p
-  %b Dob:
-  = @director.dob
-%p
-  %b Dod:
-  = @director.dod
+  #{@director.dob||"UNKNOWN"} — #{@director.dod||"UNKNOWN"}
 %p
   %b Bio:
-  = @director.bio
+  = @director.bio.html_safe
 
-= link_to 'Edit', edit_director_path(@director)
-|
-\#{link_to 'Back', directors_path}
+%p
+  %b Films:
+  %ul
+    - @director.films.each do |f|
+      %li= link_to f.formatted_name, "/films/#{f.id}"
+    

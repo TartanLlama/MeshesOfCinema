@@ -1,9 +1,6 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @genre.name
+%h2 #{@genre.name} genre
 
-= link_to 'Edit', edit_genre_path(@genre)
-\|
-= link_to 'Back', genres_path
+- (@genre.films.sort{|a,b|a.rating<=>b.rating}).each do |film|
+  = render film.mini_reviews

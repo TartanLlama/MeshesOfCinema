@@ -2,6 +2,7 @@ MeshesOfCinema::Application.routes.draw do
   resources :movements
   resources :genres
   resources :directors
+  resources :mini_reviews
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -11,14 +12,12 @@ MeshesOfCinema::Application.routes.draw do
 
   match "/reviews", to: 'reviews#index'
   match "/articles", to: 'articles#index'
-  match "/admins", to: 'admins#index'
+  match "/admin", to: 'admin#index'
   match "/mini_articles", to: 'mini_articles#index'
   match "/themes", to: 'themes#index'
   match "/elements", to: 'elements#index'
   match "/countries", to: 'countries#index'
   match "/tags", to: 'tags#index'
-  match "/mini_reviews", to: 'mini_reviews#index'
-  match "/mini_reviews/new", to: 'mini_reviews#new'
   match "/directors", to: 'directors#index'
   match "/about", to: 'standard#about'
   match "/contact", to: 'standard#contact'

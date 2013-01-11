@@ -11,3 +11,13 @@ Admin.new(name: "Simon Brand", email: 'tartanllama@hotmail.com', password: 'asdf
 Carmen::Country.all.each do |c|
   Country.new(country_id: c.code).save
 end
+
+#GENRES
+genres = %W(Action Adventure Animation Art B-movie Biography Comedy Crime Documentary Drama Epic Experimental Fantasy Historical Horror Musical Mystery Noir Romance Sci-fi Short Sport Thriller War Western)
+
+genres.each do |g|
+  Genre.new(name: g).save
+end
+#END GENRES
+
+

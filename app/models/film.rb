@@ -11,7 +11,7 @@
 #
 
 class Film < ActiveRecord::Base
-  attr_accessible :name, :year, :imdb_id, :director_ids
+  attr_accessible :name, :year, :imdb_id, :director_ids, :genre_ids
   has_and_belongs_to_many :directors
   has_and_belongs_to_many :elements
   has_and_belongs_to_many :articles
@@ -25,4 +25,8 @@ class Film < ActiveRecord::Base
   #searchable do
   #  text :name
   #end
+
+  def formatted_name
+    "#{name} (#{year})"
+  end
 end

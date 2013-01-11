@@ -49,6 +49,13 @@ class AddRelationsToTables < ActiveRecord::Migration
 
     add_index :films_mini_articles, [:mini_article_id, :film_id]
 
+    create_table :films_genres, :id => false do |t|
+      t.references :film
+      t.references :genre
+    end
+
+    add_index :films_genres, [:film_id, :genre_id]
+
     create_table :admins_mini_articles, :id => false do |t|
       t.references :mini_article
       t.references :admin

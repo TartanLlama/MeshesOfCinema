@@ -159,6 +159,13 @@ ActiveRecord::Schema.define(:version => 20120702215026) do
 
   add_index "films", ["imdb_id"], :name => "index_films_on_imdb_id", :unique => true
 
+  create_table "films_genres", :id => false, :force => true do |t|
+    t.integer "film_id"
+    t.integer "genre_id"
+  end
+
+  add_index "films_genres", ["film_id", "genre_id"], :name => "index_films_genres_on_film_id_and_genre_id"
+
   create_table "films_mini_articles", :id => false, :force => true do |t|
     t.integer "mini_article_id"
     t.integer "film_id"
